@@ -1,12 +1,24 @@
 import React, {Component} from 'react';
+import { Link, Route } from "react-router-dom";
 
 
-class Contact extends Component{
-    render() {
-        return(
-            <div><h1>Contact</h1></div>
-
-        )
-        }
-}
 export default Contact;
+function Contact(props) {
+    return (
+      <div className="contact">
+        <h1>Contact Me</h1>
+        <p>
+          Cell: (909) 800-7888
+          <br></br>
+  
+          Email: myrnacantando@gmail.com
+          <br></br>
+          
+          Github: cantando
+          <br></br>
+        </p>
+        
+      </div>
+    );
+  }
+  export default Contact;  
