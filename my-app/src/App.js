@@ -1,45 +1,43 @@
-import React, {Component} from 'react';
-import './App.css';
-import {Layout, Header, Navigation, Drawer,Content } from 'react-mdl';
-import Main from './components/main';
-import {link} from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import NavTabs from "./components/pages/navtabs";
+import Home from "./components/pages/home";
+import AboutMe from "./components/pages/about";
+import Projects from "./components/pages/projects";
+import Contact from "./components/pages/contact";
+import Technology from "./components/pages/technology";
+import Resume from "./components/pages/resume";
 
 
-class App extends Component {
-  
-  render() {
-      return (
-        <div className="demo-big-content">
-        <Layout>
-            <Header title="Title" scroll>
-                <Navigation>
-                    <Link href="/resume">Resume</Link>
-                    <Link href="/contacts">Contact</Link>
-                    <Link href="/projects">Projects</Link>
-                    <Link href="/aboutme">AboutMe</Link>
-                    <Link href="/technology">Technology</Link>
-                </Navigation>
-            </Header>
-            <Drawer title="Title">
-                <Navigation>
-                <Link href="/resume">Resume</Link>
-                    <Link href="/contacts">Contact</Link>
-                    <Link href="/projects">Projects</Link>
-                    <Link href="/aboutme">AboutMe</Link>
-                    <Link href="/technology">Technology</Link>
-                </Navigation>
-            </Drawer>
-            <Content>
-                <div className="page-content" />
-                <main/>
-            </Content>
-        </Layout>
-    </div>
-      );
-  }
+function App() {
+  return (
+    <Router>
+      <div>
+        <NavTabs />
+        <Route exact path="/home" component={Home} />
+        <Route exact path="/aboutme" component={AboutMe} />
+        <Route exact path="/projects" component={Projects} />
+        <Route exact path="/contact" component={Contact} />
+        <Route exact path="/technology" component={Technology} />
+        <Route exact path="/resume" component={Resume} />
+      </div>
+    </Router>
+  );
 }
 
-
-
-
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
